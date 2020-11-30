@@ -29,7 +29,9 @@ jobs:
         run: |
           zip README.zip README.md
       - name: Set current date as env variable
-        run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+        run: |
+          NOW=$(date +'%Y-%m-%dT%H:%M:%S')
+          echo "NOW=$NOW" >> $GITHUB_ENV
       - name: Echo current date
         run: echo $NOW
       - name: Create Release
