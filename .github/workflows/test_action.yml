@@ -23,3 +23,5 @@ jobs:
       - name: Build project # This would actually build your project, using zip for an example artifact
         run: |
           echo "123"
+      - name: list tag
+        run: git tag
