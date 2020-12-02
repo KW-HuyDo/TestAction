@@ -24,7 +24,11 @@ jobs:
         run: |
           echo "123"
 
-      - name: list tag
-        run: |
-          git tag >> tag.txt
-          cat tag.txt
+      - uses: mukunku/tag-exists-action@v1.0.0
+        id: checkTag
+        with: 
+          tag: 'v.2020-11-30T05-14-47'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: echo ${{ steps.checkTag.outputs.exists }}
