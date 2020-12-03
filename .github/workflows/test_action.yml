@@ -33,4 +33,6 @@ jobs:
 
       - name: Check tag
         if: ${{ steps.checkTag.outputs.exists }}
-        run: failure()
+        run: |
+          echo "Tag existed"
+          exit 1
