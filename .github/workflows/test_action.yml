@@ -31,5 +31,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - if: ${{ steps.checkTag.outputs.exists }}
+      - if: ${{ steps.checkTag.outputs.exists }} == "true"
         run: echo ${{ steps.checkTag.outputs.exists }}
