@@ -34,4 +34,4 @@ jobs:
       - name: Show Tag
         id: display
         run: |
-          git fetch --prune --unshallow && git describe --tags ---match 'v.2020-11-30T05-14-47'
+          git fetch --prune --unshallow && git describe --tags --match 'v.2020-11-30T05-14-47'
