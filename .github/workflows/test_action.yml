@@ -30,5 +30,6 @@ jobs:
           tag: 'v1'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      
-      - run: echo ${{ steps.checkTag.outputs.exists }}
+
+      - if: ${{ steps.checkTag.outputs.exists }}
+        run: echo ${{ steps.checkTag.outputs.exists }}
