@@ -27,17 +27,8 @@ jobs:
       - uses: mukunku/tag-exists-action@v1.0.0
         id: checkTag
         with: 
-          tag: 'v.asd'
+          tag: 'v1'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Show Tag
-        id: display
-        run: |
-          git fetch --prune --unshallow && git describe --tags >> tags.txt
-          if grep 'v.2020-11-30T05-14-47' tags.txt; then
-            echo "Hahhaa"
-          else
-            echo "Huhuhu"
-          fi
-        
+      - run: echo ${{ steps.checkTag.outputs.exists }}
