@@ -34,7 +34,8 @@ jobs:
       - name: Show Tag
         id: display
         run: |
-          if git fetch --prune --unshallow && git describe --tags | grep -- quiet 'v.2020-11-30T05-14-47'; then
+          git fetch --prune --unshallow && git describe --tags >> tags.txt
+          if grep 'v.2020-11-30T05-14-47' tags.txt; then
             echo "Hahhaa"
           else
             echo "Huhuhu"
