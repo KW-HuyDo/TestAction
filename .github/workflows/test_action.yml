@@ -24,7 +24,7 @@ jobs:
         run: |
           echo "123"
 
-      - uses: mukunku/tag-exists-action@v1.0.0
+      - uses: KW-HuyDo/tag-exists-action@v1.0.0
         id: checkTag
         with: 
           tag: 'v.2020-11-30T05-14-47'
