@@ -37,3 +37,7 @@ jobs:
           else
             echo "false"
           fi
+
+      - run: |
+          TEST="THIS\nIS\nLINE"
+          echo $TEST
