@@ -39,5 +39,5 @@ jobs:
           fi
 
       - run: |
-          TEST="THIS'\n'IS'\n'LINE"
+          TEST="THIS//$'\n'/'%0A'IS//$'\n'/'%0A'LINE"
           echo $TEST
