@@ -55,3 +55,7 @@ jobs:
           asset_path: README.zip
           asset_name: README.zip
           asset_content_type: application/zip
+
+      - name: "Test log"
+        run: |
+          echo "${{toJSON(github.event)}}"
