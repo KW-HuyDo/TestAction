@@ -65,3 +65,5 @@ jobs:
           TEST_LOG2=$(git log -1 --pretty=format:"%b")
           echo "TEST_LOG2=$TEST_LOG2" >> $GITHUB_ENV
           echo $TEST_LOG2
+          echo ::set-output name=body::${TEST_LOG2}
+          echo ${{ steps.commit.outputs.body}}
