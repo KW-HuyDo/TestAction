@@ -59,7 +59,7 @@ jobs:
       - name: "Test log"
         run: |
           echo "${{github.event.pull_request.body}}"
-          TEST_LOG=${{github.event.pull_request.body}}
+          TEST_LOG="${{github.event.pull_request.body}}"
           echo "TEST_LOG=$TEST_LOG" >> $GITHUB_ENV
           echo $TEST_LOG
           echo "${{ github.event.head_commit.message }}"
