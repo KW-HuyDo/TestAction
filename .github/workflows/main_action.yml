@@ -67,4 +67,6 @@ jobs:
           echo "TEST_LOG2=$TEST_LOG2" >> $GITHUB_ENV
           echo $TEST_LOG2
           echo ::set-output name=body::${TEST_LOG2}
+      - name: "Test log 2"
+        run: |
           echo ${{ steps.commit.outputs.body}}
