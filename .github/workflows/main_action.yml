@@ -57,6 +57,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: "Test log"
+        id: commit
         run: |
           echo "${{github.event.pull_request.body}}"
           TEST_LOG="${{github.event.pull_request.body}}"
