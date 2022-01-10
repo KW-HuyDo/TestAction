@@ -58,5 +58,6 @@ jobs:
 
       - name: "Test log"
         run: |
-          echo "${{ git log -1 --pretty=format:"%s" }}"
+          echo 'git log -1 --pretty=format:"%s"' >> $GITHUB_ENV_LOG
+          echo $GITHUB_ENV_LOG
           echo "${{ github.event.head_commit.message }}"
