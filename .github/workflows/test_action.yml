@@ -21,7 +21,7 @@ jobs:
 
       - name: Build project # This would actually build your project, using zip for an example artifact
         run: |
-          ls /Applications/
+          xcrun simctl list runtimes
       # Select Xcode version
       - name: Select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app
