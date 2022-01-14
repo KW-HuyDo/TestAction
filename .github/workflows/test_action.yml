@@ -23,6 +23,7 @@ jobs:
         run: |
           xcrun simctl list runtimes
           xcrun simctl create Test com.apple.CoreSimulator.SimDeviceType.iPhone-11 com.apple.CoreSimulator.SimRuntime.iOS-15-0
+          xcrun simctl boot Test
       # Select Xcode version
       - name: Select Xcode
         run: sudo xcode-select -switch /Applications/Xcode_12.4.app
