@@ -1,4 +1,3 @@
 # TestAction
 a
 a
-s
