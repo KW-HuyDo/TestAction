@@ -59,15 +59,10 @@ jobs:
       - name: "Test log"
         id: commit
         run: |
-          echo "${{github.event.pull_request.body}}"
-          TEST_LOG="${{github.event.pull_request.body}}"
-          echo "TEST_LOG=$TEST_LOG" >> $GITHUB_ENV
-          echo $TEST_LOG
           TEST_LOG2=$(git log -1 --pretty=format:"%b")
           echo "TEST_LOG2=$TEST_LOG2" >> $GITHUB_ENV
           echo $TEST_LOG2
-          str="$(git log -1 --pretty=format:'%b')"
-          echo ::set-output name=body::${str}
+          
       - name: "Test log 2"
         run: |
-          echo ${{ steps.commit.outputs.body}}
+          echo ${{ env.TEST_LOG2}}
