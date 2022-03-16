@@ -66,7 +66,7 @@ jobs:
           TEST_LOG2=$(git log -1 --pretty=format:"%b")
           echo "TEST_LOG2=$TEST_LOG2" >> $GITHUB_ENV
           echo $TEST_LOG2
-          str=$(git log -1 --pretty=format:"%b")
+          str="$(git log -1 --pretty=format:'%b')"
           echo ::set-output name=body::${str}
       - name: "Test log 2"
         run: |
