@@ -67,4 +67,4 @@ jobs:
           
       - name: "Test log 2"
         run: |
-          echo ${{ env.TEST_LOG2}}
+          echo "${{ env.TEST_LOG2}}"
