@@ -60,7 +60,9 @@ jobs:
         id: commit
         run: |
           TEST_LOG2=$(git log -1 --pretty=format:"%b")
-          echo "TEST_LOG2=$TEST_LOG2" >> $GITHUB_ENV
+          echo "TEST_LOG2<<EOF" >> $GITHUB_ENV
+          echo "$TEST_LOG2" >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
           echo $TEST_LOG2
           
       - name: "Test log 2"
