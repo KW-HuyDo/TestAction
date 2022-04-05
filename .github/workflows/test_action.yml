@@ -26,4 +26,4 @@ jobs:
           xcrun simctl boot Test
       # Select Xcode version
       - name: Select Xcode
-        run: sudo xcode-select -switch /Applications/Xcode_12.4.app
+        run: xcodebuild -version
