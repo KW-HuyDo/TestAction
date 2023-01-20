@@ -46,7 +46,7 @@ jobs:
       
       - name: Restore cached 
         id: cache-framework-restore
-        uses: actions/cache@v3
+        uses: actions/cache/restore@v3
         with:
           path: output/Test.framework
           key: ${{ github.run_id }}-test_action
