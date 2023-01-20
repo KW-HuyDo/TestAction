@@ -37,6 +37,7 @@ jobs:
           key: ${{ github.run_id }}-test_action
   
   retrieve-cache-and-run:
+    needs: build-and-save-to-cache
     # The type of runner that the job will run on
     runs-on: macOS-latest
     steps:
