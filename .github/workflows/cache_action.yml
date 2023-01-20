@@ -41,15 +41,17 @@ jobs:
     # The type of runner that the job will run on
     runs-on: macOS-latest
     steps:
+      - name: make output
+        run: mkdir output
       - name: Restore cached 
         id: cache-framework-restore
         uses: actions/cache@v3
         with:
-          path: Test.framework
+          path: output/Test.framework
           key: ${{ github.run_id }}-test_action
       
       - name: run framework
-        run: cat Test.framework
+        run: cat output/Test.framework
         
       - name: delete cache
         run: |
