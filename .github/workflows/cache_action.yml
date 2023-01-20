@@ -49,7 +49,7 @@ jobs:
           key: ${{ github.run_id }}-test_action
       
       - name: run framework
-        run: cat output/Test.framework
+        run: cat Test.framework
         
       - name: delete cache
         run: |
