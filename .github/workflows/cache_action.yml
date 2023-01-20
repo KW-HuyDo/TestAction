@@ -1,0 +1,43 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Test cache between jobs
+
+# Controls when the action will run. 
+on:
+  push:
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build-and-save-to-cache:
+    # The type of runner that the job will run on
+    runs-on: macOS-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Build framework
+        run: echo "This is framework" >> Test.framework
+
+      - name: Cache framework
+        id: cache-framework
+        uses: actions/cache@v3
+        with:
+          path: Test.framework
+          key: ${{ github.run_id }}-test_action
+  
+  retrieve-cache-and-run:
+    # The type of runner that the job will run on
+    runs-on: macOS-latest
+      - name: Restore cached 
+        id: cache-framework-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: Test.framework
+          key: ${{ github.run_id }}-test_action
+      
+      - name: run framework
+        run: echo Test.framework
