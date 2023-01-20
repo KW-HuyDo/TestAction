@@ -28,6 +28,13 @@ jobs:
         with:
           path: Test.framework
           key: ${{ github.run_id }}-test_action
+          
+      - name: Restore cached 
+        id: cache-framework-restore
+        uses: actions/cache/restore@v3
+        with:
+          path: Test.framework
+          key: ${{ github.run_id }}-test_action
   
   retrieve-cache-and-run:
     # The type of runner that the job will run on
