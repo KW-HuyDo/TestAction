@@ -41,4 +41,4 @@ jobs:
           key: ${{ github.run_id }}-test_action
       
       - name: run framework
-        run: echo Test.framework
+        run: cat Test.framework
